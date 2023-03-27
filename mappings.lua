@@ -8,10 +8,10 @@ return {
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
-    ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-    ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
-    ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
-    ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+    -- ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+    -- ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
+    -- ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
+    -- ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
@@ -22,6 +22,13 @@ return {
     ["<M-Down>"] = { "<cmd>resize -2<cr>", desc = "Decrease window height" },
     ["<M-Left>"] = { "<cmd>vertical resize +2<cr>", desc = "Decrease window width" },
     ["<M-Right>"] = { "<cmd>vertical resize -2<cr>", desc = "Increase window width" },
+    --[[ ["<leader>Q"] = {
+      function()
+        require("astronvim.utils.buffer").close_all()
+        vim.cmd "q!"
+      end,
+      desc = "Quit All",
+    }, ]]
   },
   t = {
     -- setting a mapping to false will disable it
