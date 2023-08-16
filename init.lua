@@ -1,48 +1,7 @@
 return {
-  --[[ icons = {
-    ActiveLSP = "",
-    ActiveTS = " ",
-    BufferClose = "",
-    DapBreakpoint = "",
-    DapBreakpointCondition = "",
-    DapBreakpointRejected = "",
-    DapLogPoint = "",
-    DapStopped = "",
-    DefaultFile = "",
-    Diagnostic = "",
-    DiagnosticError = "",
-    DiagnosticHint = "",
-    DiagnosticInfo = "",
-    DiagnosticWarn = "",
-    Ellipsis = "",
-    FileModified = "",
-    FileReadOnly = "",
-    FoldClosed = "",
-    FoldOpened = "",
-    FolderClosed = "",
-    FolderEmpty = "",
-    FolderOpen = "",
-    Git = "",
-    GitAdd = "",
-    GitBranch = "",
-    GitChange = "",
-    GitConflict = "",
-    GitDelete = "",
-    GitIgnored = "",
-    GitRenamed = "",
-    GitStaged = "",
-    GitUnstaged = "",
-    GitUntracked = "",
-    LSPLoaded = "",
-    LSPLoading1 = "",
-    LSPLoading2 = "",
-    LSPLoading3 = "",
-    MacroRecording = "",
-    Paste = "",
-    Search = "",
-    Selected = "",
-    TabClose = "",
-  }, ]]
+
+  -- { "rebelot/heirline.nvim", enabled = false },
+
   -- Configure AstroNvim updates
   updater = {
     remote = "origin", -- remote to use
@@ -61,7 +20,7 @@ return {
     },
   },
   -- Set colorscheme to use
-  colorscheme = "tokyonight-moon",
+  colorscheme = "everforest",
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
     virtual_text = true,
@@ -90,7 +49,8 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+      -- cssls = { settings = { css = { lint = { unknownAtRules = "ignore" } } } },
+      -- tailwindcss = { settings = { css = { lint = { unknownAtRules = "ignore" } } } },
     },
   },
   -- Configure require("lazy").setup() options
@@ -99,7 +59,15 @@ return {
     performance = {
       rtp = {
         -- customize default disabled vim plugins
-        disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin", "matchparen" },
+        disabled_plugins = {
+          "tohtml",
+          "gzip",
+          "matchit",
+          "zipPlugin",
+          "netrwPlugin",
+          "tarPlugin",
+          "matchparen",
+        },
       },
     },
   },
@@ -107,10 +75,33 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    -- Disable buffer and git tabs in NeoTree
+    -- vim.g.neotree_show_buffer = 0
+    -- vim.g.neotree_git_hl = 0
+
     if vim.g.neovide then
       -- Put anything you want to happen only in Neovide here
-      vim.opt.guifont = { "Fira Code Mono", ":h12" }
+      vim.opt.guifont = { "FiraCode Nerd Font", ":h12" }
+      vim.g.neovide_scale_factor = 1.0
+      vim.g.neovide_input_macos_alt_is_meta = true
+      vim.g.neovide_cursor_animate_command_line = false
+      vim.g.neovide_cursor_animation_length = 0.1
+      vim.g.neovide_input_use_logo = true
     end
+
+    -- -- add auto change line numbers
+    -- vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+    --   callback = function() vim.opt.relativenumber = false end,
+    -- })
+    --
+
+    -- local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
+    -- local background_color = normal_hl.background
+    vim.cmd [[
+      autocmd ColorScheme * hi NeoTreeNormal guibg=NONE ctermbg=NONE
+      autocmd ColorScheme * hi NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE
+      highlight BufferLine guibg=#FFFFFF
+    ]]
 
     -- add auto change line numbers
     vim.api.nvim_create_autocmd({ "InsertEnter" }, {
