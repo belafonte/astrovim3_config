@@ -29,6 +29,12 @@ return {
   lsp = {
     -- customize lsp formatting options
     formatting = {
+      filter = function(client)
+        -- disable formatting for tsserver
+        if client.name == "tsserver" then return false end
+
+        return true
+      end,
       -- control auto formatting on save
       format_on_save = {
         enabled = true, -- enable or disable format on save globally
