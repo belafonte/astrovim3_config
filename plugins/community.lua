@@ -17,6 +17,11 @@ return {
   -- ----------------------------------------------
 
   -- ----------------------------------------------
+  -- Diagnostics
+
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
+
+  -- ----------------------------------------------
   -- Bars and Lines
   -- { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
   -- {
@@ -74,11 +79,12 @@ return {
     },
   },
   -- ----------------------------------------------
+  --
 
   -- ----------------------------------------------
   -- Motion
   -- Navigate with search labels
-  -- { import = "astrocommunity.motion.flash-nvim" }, -- overrides S surround in visual state
+  { import = "astrocommunity.motion.flash-nvim" }, -- overrides S surround in visual state
   -- ----------------------------------------------
 
   -- ----------------------------------------------
@@ -121,9 +127,14 @@ return {
   -- ----------------------------------------------
 
   -- ----------------------------------------------
-  -- Registers
+  -- registers
   { import = "astrocommunity.register.nvim-neoclip-lua" },
   -- ----------------------------------------------
+  --
+
+  -- ----------------------------------------------
+  -- scrolling
+  -- { import = "astrocommunity.scrolling.neoscroll-nvim" },
 
   -- ----------------------------------------------
   -- Themes
