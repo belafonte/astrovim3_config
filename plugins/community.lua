@@ -45,20 +45,6 @@ return {
             separator = true,
           },
         },
-        -- highlights = {
-        --   fill = {
-        --     guifg = "#100e23",
-        --     guibg = "#87DFEB",
-        --   },
-        --   tab = {
-        --     fg = "#100e23",
-        --     bg = "#87DFEB",
-        --   },
-        --   background = {
-        --     fg = "#100e23",
-        --     bg = "#87DFEB",
-        --   },
-        -- },
       },
     },
   },

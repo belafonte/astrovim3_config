@@ -110,12 +110,13 @@ return {
     local comment_fg_color = comment_highlight.foreground
 
     -- Define the Vim command string with concatenated variable values
+    -- autocmd ColorScheme * hi BufferLineSeparator guifg='bg' guibg='bg'
     local vim_command = string.format(
       [[
         autocmd ColorScheme * hi NeoTreeNormal guibg=NONE ctermbg=NONE
         autocmd ColorScheme * hi NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE
-
-        highlight BufferLine guibg=#FFFFFF
+        autocmd ColorScheme * hi BufferLineFill guifg='bg' guibg='bg'
+        autocmd ColorScheme * hi BufferLineOffsetSeparator guifg='#000000' guibg='bg'
         autocmd ColorScheme * hi NeotreeTabActive guifg=%s guibg='bg'
         autocmd ColorScheme * hi NeotreeTabInactive guifg=%s guibg='bg'
         autocmd ColorScheme * hi NeoTreeTabSeparatorInactive guifg=bg guibg='bg'
