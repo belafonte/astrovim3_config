@@ -1,3 +1,4 @@
+local utils = require "astronvim.utils"
 -- AstroCommunity plugins
 -- https://github.com/AstroNvim/astrocommunity
 
@@ -23,13 +24,30 @@ return {
 
   -- ----------------------------------------------
   -- Bars and Lines
-  -- { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   opts = {
-  --     always_show_bufferline = false,
-  --   },
-  -- },
+  { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        themable = true,
+        -- style_preset = "minimal",
+        always_show_bufferline = false,
+        indicator = {
+          icon = "▎", -- this should be omitted if indicator style is not 'icon'
+          style = "icon",
+        },
+        offsets = {
+          {
+            filetype = "neo-tree",
+            text = "File Explorer",
+            text_align = "left",
+            -- padding = 1,
+            separator = true,
+          },
+        },
+      },
+    },
+  },
 
   { import = "astrocommunity.bars-and-lines.scope-nvim" },
 
@@ -103,7 +121,8 @@ return {
   -- Adds 'solargraph' language server
   -- Adds 'standardrb' through null-ls
   -- Adds 'nvim-dap-ruby'
-  { import = "astrocommunity.pack.ruby" },
+  -- DOES NOT WORK -> LSP TIMEOUT
+  -- { import = "astrocommunity.pack.ruby" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.tailwindcss" },
