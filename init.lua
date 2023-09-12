@@ -103,11 +103,30 @@ return {
 
     -- local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
     -- local background_color = normal_hl.background
-    vim.cmd [[
-      autocmd ColorScheme * hi NeoTreeNormal guibg=NONE ctermbg=NONE
-      autocmd ColorScheme * hi NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE
-      highlight BufferLine guibg=#FFFFFF
-    ]]
+    local normal_highlight = vim.api.nvim_get_hl_by_name("Normal", true)
+    local normal_fg_color = normal_highlight.foreground
+
+    local comment_highlight = vim.api.nvim_get_hl_by_name("Comment", true)
+    local comment_fg_color = comment_highlight.foreground
+
+    -- Define the Vim command string with concatenated variable values
+    local vim_command = string.format(
+      [[
+        autocmd ColorScheme * hi NeoTreeNormal guibg=NONE ctermbg=NONE
+        autocmd ColorScheme * hi NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE
+
+        highlight BufferLine guibg=#FFFFFF
+        autocmd ColorScheme * hi NeotreeTabActive guifg=%s guibg='bg'
+        autocmd ColorScheme * hi NeotreeTabInactive guifg=%s guibg='bg'
+        autocmd ColorScheme * hi NeoTreeTabSeparatorInactive guifg=bg guibg='bg'
+        autocmd ColorScheme * hi NeoTreeTabSeparatorActive guifg=bg guibg='bg'
+      ]],
+      normal_fg_color,
+      comment_fg_color
+    )
+
+    -- Execute the Vim command
+    vim.cmd(vim_command)
 
     -- add auto change line numbers
     vim.api.nvim_create_autocmd({ "InsertEnter" }, {
