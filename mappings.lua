@@ -166,11 +166,11 @@ return {
     --     function() require("spectre").open_visual { select_word = true } end,
     --     desc = "Spectre (current word)",
     --   },
-    ["<leader>x"] = { desc = "裂Trouble" },
-    ["<leader>xx"] = { "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
-    ["<leader>xX"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
-    ["<leader>xl"] = { "<cmd>TroubleToggle loclist<cr>", desc = "Location List (Trouble)" },
-    ["<leader>xq"] = { "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
+    -- ["<leader>x"] = { desc = "裂Trouble" },
+    -- ["<leader>xx"] = { "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
+    -- ["<leader>xX"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
+    -- ["<leader>xl"] = { "<cmd>TroubleToggle loclist<cr>", desc = "Location List (Trouble)" },
+    -- ["<leader>xq"] = { "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
     --   ["<leader>;"] = { desc = "󰧑 AI Assistant" },
     --   ["<leader>;;"] = {
     --     function()
@@ -208,13 +208,29 @@ return {
     --
 
     -- ["<leader>v"] = { "<cmd>:1TermExec direction=vertical cmd='clear'<cr>", desc = "Vertical Terminal" },
-    ["<leader>t2v"] = { "<cmd>:2TermExec direction=vertical size=50 cmd='clear'<cr>", desc = "2 Vertical Terminal" },
-    ["<leader>t22"] = {
+    ["<leader>ts"] = {
+      "<cmd>:TermSelect<cr>",
+      desc = "Select Terminals",
+    },
+    ["<leader>tm"] = {
+      desc = "Multiple Terminals",
+    },
+    ["<leader>tmv"] = {
       "<cmd>:TermExec direction=vertical size=50 cmd='clear'<cr><cmd>:2TermExec direction=vertical size=50 cmd='clear'<cr>",
       desc = "2 Vertical Stacked Terminals",
     },
+    ["<leader>tmt"] = {
+      "<cmd>:3TermExec direction=vertical size=50 cmd='clear'<cr>",
+      desc = "Add Third Vertical Terminal",
+    },
+
+    ["<leader>tmh"] = {
+      "<cmd>:TermExec direction=horizontal size=50 cmd='clear'<cr><cmd>:2TermExec direction=horizontal size=50 cmd='clear'<cr>",
+      desc = "2 Horizontal Terminals",
+    },
+
     t = {
-      ["<C-BS>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" },
+      ["<C-q>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" },
       ["<esc><esc>"] = { "<C-\\><C-n>:q<cr>", desc = "Terminal quit" },
     },
     x = {
