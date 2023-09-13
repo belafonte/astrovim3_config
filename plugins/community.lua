@@ -155,6 +155,9 @@ return {
   -- scrolling
   -- { import = "astrocommunity.scrolling.neoscroll-nvim" },
 
+  -- Code Completion
+  { import = "astrocommunity.completion.copilot-lua" },
+
   -- ----------------------------------------------
   -- Themes
   -- defined in themes.lua
