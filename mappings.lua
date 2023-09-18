@@ -28,8 +28,13 @@ return {
     -- ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
-    -- resize windoes with meta
-    --
+
+    -- MANAGE PACKAGE DEPS
+    ["<leader>pd"] = { desc = "NPM Packages" },
+    ["<leader>pdl"] = { "<cmd>lua require('package-info').show()<cr>", desc = "Show Latest Version" },
+    ["<leader>pdd"] = { "<cmd>lua require('package-info').delete()<cr>", desc = "Delete Package" },
+    ["<leader>pdu"] = { "<cmd>lua require('package-info').change_version()<cr>", desc = "Change Package Version" },
+    ["<leader>pdi"] = { "<cmd>lua require('package-info').install()<cr>", desc = "Install new Package" },
 
     ["<C-u>"] = { "<C-u>zz", desc = "Half Page up + Center" },
     ["<C-d>"] = { "<C-d>zz", desc = "Half Page down + Center" },
