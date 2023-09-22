@@ -8,11 +8,14 @@ local normal_bg_color = comment_highlight.background
 
 return { -- this table overrides highlights in all themes
   -- Normal = { bg = comment_fg_color },
-  BufferLineFill = { bg = "bg" },
-  BufferLineOffsetSeparator = { fg = comment_bg_color, bg = "bg" },
+  -- BufferLineFill = { bg = "bg" },
+  -- BufferLineOffsetSeparator = { fg = comment_bg_color, bg = "bg" },
+
   NeoTreeNormal = { bg = "bg" },
   NeoTreeEndOfBuffer = { bg = "bg" },
   NormalFloat = { bg = "bg" },
+  Normal = { bg = "bg" },
+  FloatBorder = { bg = "bg" },
 
   NeotreeTabActive = { bg = "bg" },
   NeotreeTabInactive = { bg = "bg" },

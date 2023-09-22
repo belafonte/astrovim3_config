@@ -29,15 +29,16 @@ return {
   lsp = {
     -- customize lsp formatting options
     formatting = {
-      filter = function(client)
-        -- disable formatting for tsserver
-        if client.name == "tsserver" then return false end
-
-        return true
-      end,
+      -- filmer = function(client)
+      --   -- disable formatting for tsserver
+      --   if client.name == "tsserver" then return false end
+      --
+      --   return true
+      -- end,
       -- control auto formatting on save
       format_on_save = {
         enabled = true, -- enable or disable format on save globally
+
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -100,37 +101,6 @@ return {
     --   callback = function() vim.opt.relativenumber = false end,
     -- })
     --
-
-    -- local normal_hl = vim.api.nvim_get_hl_by_name("Normal", true)
-    -- local background_color = normal_hl.background
-    -- local normal_highlight = vim.api.nvim_get_hl_by_name("Normal", true)
-    -- local normal_fg_color = normal_highlight.foreground
-
-    -- local comment_highlight = vim.api.nvim_get_hl_by_name("Comment", true)
-    -- local comment_fg_color = comment_highlight.foreground
-    --
-    -- -- Define the Vim command string with concatenated variable values
-    -- -- autocmd ColorScheme * hi BufferLineSeparator guifg='bg' guibg='bg'
-    -- local vim_command = string.format(
-    --   [[
-    --     autocmd ColorScheme * hi NeoTreeNormal guibg=NONE ctermbg=NONE
-    --     autocmd ColorScheme * hi NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE
-    --
-    --     autocmd ColorScheme * hi BufferLineFill guifg='bg' guibg='bg'
-    --     autocmd ColorScheme * hi BufferLineOffsetSeparator guifg='#000000' guibg='bg'
-    --
-    --     autocmd ColorScheme * hi ToggleTerm101NormalFloat guifg='bg' guibg='bg'
-    --     autocmd ColorScheme * hi ToggleTerm1NormalFloat guifg='bg' guibg='bg'
-    --     autocmd ColorScheme * hi ToggleTerm2NormalFloat guifg='bg' guibg='bg'
-    --
-    --     autocmd ColorScheme * hi NeotreeTabActive guifg=%s guibg='bg'
-    --     autocmd ColorScheme * hi NeotreeTabInactive guifg=%s guibg='bg'
-    --     autocmd ColorScheme * hi NeoTreeTabSeparatorInactive guifg=bg guibg='bg'
-    --     autocmd ColorScheme * hi NeoTreeTabSeparatorActive guifg=bg guibg='bg'
-    --   ]],
-    --   normal_fg_color,
-    --   comment_fg_color
-    -- )
 
     -- Execute the Vim command
     -- vim.cmd(vim_command)
