@@ -100,6 +100,10 @@ return {
   --
 
   -- ----------------------------------------------
+  -- Terminal Integration
+  { import = "astrocommunity.terminal-integration.vim-tmux-yank" },
+
+  -- ----------------------------------------------
   -- Motion
   -- Navigate with search labels
   { import = "astrocommunity.motion.flash-nvim" }, -- overrides S surround in visual state
@@ -126,6 +130,7 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.tailwindcss" },
+  { import = "astrocommunity.pack.prisma" },
 
   -- Pack not used as prettierd too agressive with format
   -- Treesitter: markdown & markdown_inline, Lsp: marksman, Lint/format: prettierd
