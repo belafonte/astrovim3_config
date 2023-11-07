@@ -56,13 +56,15 @@ return {
   -- color picker and highlighter
   { import = "astrocommunity.color.ccc-nvim" },
 
+  -- Indent
   -- ----------------------------------------------
+  -- { import = "astrocommunity.indent.mini-indentscope" },
+  { import = "astrocommunity.indent.indent-blankline-nvim" },
 
   -- ----------------------------------------------
   -- Motion plugins
   -- :help nvim-surround.usage.
   { import = "astrocommunity.motion.nvim-surround" },
-  -- ----------------------------------------------
 
   -- ----------------------------------------------
   -- Editor support
@@ -70,6 +72,8 @@ return {
   -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.nvim-regexplainer" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
+  -- { import = "astrocommunity.editing-support.multicursors-nvim" },
+
   {
     "folke/todo-comments.nvim",
     opts = {
@@ -77,8 +81,6 @@ return {
     },
   },
 
-  -- ----------------------------------------------
-  -- Distraction free editing
   { import = "astrocommunity.editing-support.zen-mode-nvim" },
   {
     "folke/zen-mode.nvim",
@@ -101,7 +103,6 @@ return {
 
   -- ----------------------------------------------
   -- Terminal Integration
-  { import = "astrocommunity.terminal-integration.vim-tmux-yank" },
 
   -- ----------------------------------------------
   -- Motion
