@@ -164,6 +164,11 @@ return {
   -- Code Completion
   { import = "astrocommunity.completion.copilot-lua-cmp" },
 
+  -- Indent
+  -- ----------------------------------------------
+  { import = "astrocommunity.indent.indent-blankline-nvim" },
+  { import = "astrocommunity.indent.mini-indentscope" },
+
   -- ----------------------------------------------
   -- Themes
   -- defined in themes.lua

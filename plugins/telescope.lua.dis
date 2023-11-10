@@ -1,4 +1,4 @@
-return {
+--[[ return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-telescope/telescope-hop.nvim",
@@ -78,4 +78,4 @@ return {
     telescope.load_extension "file_browser"
     telescope.load_extension "projects"
   end,
-}
+} ]]
