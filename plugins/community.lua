@@ -98,8 +98,11 @@ return {
       },
     },
   },
+
   -- ----------------------------------------------
-  --
+  -- Git Integrations
+  -- { import = "astrocommunity.git.neogit" },
+  { import = "astrocommunity.git.diffview-nvim" },
 
   -- ----------------------------------------------
   -- Terminal Integration

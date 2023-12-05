@@ -61,6 +61,7 @@ return {
       -- tailwindcss = { settings = { css = { lint = { unknownAtRules = "ignore" } } } },
     },
   },
+
   -- Configure require("lazy").setup() options
   lazy = {
     defaults = { lazy = true },
