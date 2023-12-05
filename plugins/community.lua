@@ -134,6 +134,7 @@ return {
   -- DOES NOT WORK -> LSP TIMEOUT
   -- { import = "astrocommunity.pack.ruby" },
   { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.prisma" },
