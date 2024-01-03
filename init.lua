@@ -82,6 +82,8 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    -- telescopePickers.prettyGrepPicker { picker = "live_grep" }
+
     -- Disable buffer and git tabs in NeoTree
     -- vim.g.neotree_show_buffer = 0
     -- vim.g.neotree_git_hl = 0
