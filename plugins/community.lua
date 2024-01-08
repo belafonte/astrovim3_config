@@ -25,7 +25,7 @@ return {
   -- ----------------------------------------------
   -- Bars and Lines
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
-  { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
+  -- { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
 
   {
     "akinsho/bufferline.nvim",
