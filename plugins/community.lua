@@ -205,6 +205,10 @@ return {
   -- ----------------------------------------------
 
   -- ----------------------------------------------
+  -- Markdown and Latex
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+
+  -- ----------------------------------------------
   -- Utility
   -- rich command prompt
   { import = "astrocommunity.utility.noice-nvim" },
