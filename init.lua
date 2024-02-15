@@ -59,6 +59,21 @@ return {
       -- cssls = { settings = { css = { lint = { unknownAtRules = "ignore" } } } },
       -- tailwindcss = { settings = { css = { lint = { unknownAtRules = "ignore" } } } },
     },
+    config = {
+      cssls = {
+        settings = {
+          css = { validate = true, lint = {
+            unknownAtRules = "ignore",
+          } },
+          scss = { validate = true, lint = {
+            unknownAtRules = "ignore",
+          } },
+          less = { validate = true, lint = {
+            unknownAtRules = "ignore",
+          } },
+        },
+      },
+    },
   },
 
   -- Configure require("lazy").setup() options
@@ -88,6 +103,19 @@ return {
     -- Disable buffer and git tabs in NeoTree
     -- vim.g.neotree_show_buffer = 0
     -- vim.g.neotree_git_hl = 0
+    -- require("astronvim.utils.lsp").setup("cssls", {
+    --   settings = {
+    --     css = { validate = true, lint = {
+    --       unknownAtRules = "ignore",
+    --     } },
+    --     scss = { validate = true, lint = {
+    --       unknownAtRules = "ignore",
+    --     } },
+    --     less = { validate = true, lint = {
+    --       unknownAtRules = "ignore",
+    --     } },
+    --   },
+    -- })
 
     if vim.g.neovide then
       -- Put anything you want to happen only in Neovide here
