@@ -40,6 +40,8 @@ return {
 
     ["<C-u>"] = { "<C-u>zz", desc = "Half Page up + Center" },
     ["<C-d>"] = { "<C-d>zz", desc = "Half Page down + Center" },
+    -- ["j"] = { "j zz", desc = "Down + Center" },
+    -- ["k"] = { "k zz", desc = "Up + Center" },
     -- ["<U>"] = { "<cmd>Uzz<cr>", desc = "Increase window height" },
 
     ["<M-Up>"] = { "<cmd>resize +2<cr>", desc = "Increase window height" },
@@ -74,11 +76,17 @@ return {
     --   desc = "Quit All",
     -- }, ]]
 
+    ["<leader>bv"] = {
+      "<cmd>silent! windo if winnr('$') > 1 | execute 'bdelete ' . join(filter(range(1, bufnr('$')), 'bufwinnr(v:val) < 0')) | endif<CR>",
+      desc = "Close Buffers beside open ones",
+    },
+
     -- Save All
     ["<leader>W"] = { "<cmd>wa<cr>", desc = "Save All" },
     -- better buffer navigation
     ["]b"] = false,
     ["[b"] = false,
+
     ["<S-l>"] = {
       function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
       desc = "Next buffer",
