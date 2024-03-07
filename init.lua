@@ -132,6 +132,10 @@ return {
     --   callback = function() vim.opt.relativenumber = false end,
     -- })
     --
+    --
+    --
+    -- vim.api.nvim_set_keymap("n", "j", "jzz", { noremap = true, silent = true })
+    -- vim.api.nvim_set_keymap("n", "k", "kzz", { noremap = true, silent = true })
 
     -- Execute the Vim command
     -- vim.cmd(vim_command)
@@ -144,6 +148,33 @@ return {
     vim.api.nvim_create_autocmd({ "InsertLeave" }, {
       callback = function() vim.opt.relativenumber = true end,
     })
+
+    vim.api.nvim_create_autocmd({ "BufRead" }, {
+      callback = function() vim.api.nvim_command "normal bsi" end,
+    })
+
+    vim.api.nvim_create_autocmd({ "CursorMoved" }, {
+      callback = function()
+        if vim.bo.filetype ~= "neo-tree" and vim.fn.bufname ~= "[No Name]" then vim.api.nvim_command "normal zz" end
+      end,
+    })
+
+    -- -- Define a variable to track the autocmd status
+    -- local autocmd_enabled = true
+    --
+    -- -- Create the autocmd
+    -- vim.api.nvim_create_autocmd({ "CursorMoved" }, {
+    --   callback = function()
+    --     -- Check if the autocmd is enabled
+    --     if autocmd_enabled and vim.bo.filetype ~= "neotree" then vim.api.nvim_command "normal zz" end
+    --   end,
+    -- })
+
+    -- Function to toggle the autocmd status
+    -- local function toggle_autocmd() autocmd_enabled = not autocmd_enabled end
+
+    -- Map <leader>ubz to toggle the autocmd status
+    -- vim.api.nvim_set_keymap("n", "<leader>uz", "<cmd>lua toggle_autocmd()<CR>", { noremap = true, silent = true })
 
     -- Set up custom filetypes
     -- vim.filetype.add {

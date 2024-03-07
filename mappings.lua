@@ -38,10 +38,11 @@ return {
     ["<leader>pdu"] = { "<cmd>lua require('package-info').change_version()<cr>", desc = "Change Package Version" },
     ["<leader>pdi"] = { "<cmd>lua require('package-info').install()<cr>", desc = "Install new Package" },
 
-    ["<C-u>"] = { "<C-u>zz", desc = "Half Page up + Center" },
-    ["<C-d>"] = { "<C-d>zz", desc = "Half Page down + Center" },
-    -- ["j"] = { "j zz", desc = "Down + Center" },
-    -- ["k"] = { "k zz", desc = "Up + Center" },
+    -- ["<C-u>"] = { "<C-u>zz", desc = "Half Page up + Center" },
+    -- ["<C-d>"] = { "<C-d>zz", desc = "Half Page down + Center" },
+
+    -- ["j"] = { "jzz", desc = "Down + Center" },
+    -- ["k"] = { "kzz", desc = "Up + Center" },
     -- ["<U>"] = { "<cmd>Uzz<cr>", desc = "Increase window height" },
 
     ["<M-Up>"] = { "<cmd>resize +2<cr>", desc = "Increase window height" },
