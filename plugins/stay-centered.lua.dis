@@ -1,0 +1,13 @@
+return {
+  "arnamak/stay-centered.nvim",
+  enabled = false,
+  -- config = true,
+  -- config = function() require("stay-centered").setup() end,
+  opts = {
+    skip_filetypes = { "neo-tree", "alpha" },
+  },
+}
+
+-- opts = {
+--   skip_filetypes = { "neo-tree", "alpha" },
+-- },
